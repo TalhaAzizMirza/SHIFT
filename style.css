@@ -28,11 +28,8 @@ a {
     color: #ffffff;
 }
 .input-group{
-  margin-top: 20px auto;
-  margin-left: 30%;
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
+  margin-left: 28%;
+  width: 45%;
   }
   .resize{
     height: 100%;
