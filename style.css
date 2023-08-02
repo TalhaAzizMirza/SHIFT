@@ -28,9 +28,17 @@ a {
     color: #ffffff;
 }
 .input-group{
-    width: 500px;
-    margin-left: 480px;
-}
+  margin-top: 20px auto;
+  margin-left: 30%;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+  .resize{
+    height: 100%;
+    width: 100%;
+    margin-top: 100px;
+  }
 .jumbotron {
   background-color: #c31010;
   color: #fff;
