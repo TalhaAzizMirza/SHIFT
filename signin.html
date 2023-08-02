@@ -9,53 +9,53 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        .navbar-inverse {
-            background-color: #c31010;
-            border-color: #ffffff;
-        }
-        
-        .navbar-inverse .navbar-nav>.active>a,
-        .navbar-inverse .navbar-nav>.active>a:focus,
-        .navbar-inverse .navbar-nav>.active>a:hover {
-            color: #060606;
-            background-color: #ffffff;
-        }
-        
-        .navbar-inverse .navbar-nav>li>a {
-            color: #090909;
-        }
-        
-        .navbar-inverse .navbar-nav>li>a:focus,
-        .navbar-inverse .navbar-nav>li>a:hover {
-            color: #f90505;
-            background-color: transparent;
-        }
-        a {
-            color: #c31010;
-        }
-    </style>
-</head>
+      .navbar {
+margin-bottom: 0;
+background-color: #c31010;
+z-index: 9999;
+border: 0;
+font-size: 12px !important;
+line-height: 1.42857143 !important;
+letter-spacing: 4px;
+border-radius: 0;
+font-family: Montserrat, sans-serif;
+margin-left: 0;
+}
+.navbar li a, .navbar .navbar-brand {
+color: #fff !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+color: #c31010 !important;
+background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+border-color: transparent;
+color: #fff !important;
+}
+  </style>
 
 <body>
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="./index.html">
-                    <img src="./logo.png" style="width: 130px;margin-top: 15px;" />
-                </a>
-                <!-- <a class="navbar-brand" href="#">GSY Services</a> -->
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="./index.html" style="margin-top: 30px;font-size: 20px;">Home</a></li>
-
-
-                <li><a href="./singup.html" style="margin-top: 27px;font-size: 20px;">
-                        Sign Up</a></li>
-                <li><a href="./signin.html" style="margin-top: 27px;margin-right: 100px;font-size: 20px; color: #ffffff;"> Sign In</a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="./index.html">S.H.!.F.T.</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="./index.html">HOME</a></li>
+          <li><a href="./signin.html">SIGN IN</a></li>
+          <li><a href="./singup.html">SIGN UP</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<hr>
     <hr>
 
 
@@ -125,7 +125,43 @@
 
 
 
-
+    <script>
+        $(document).ready(function(){
+          // Add smooth scrolling to all links in navbar + footer link
+          $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+        
+              // Store hash
+              var hash = this.hash;
+        
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 900, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+          
+          $(window).scroll(function() {
+            $(".slideanim").each(function(){
+              var pos = $(this).offset().top;
+        
+              var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                  $(this).addClass("slide");
+                }
+            });
+          });
+        })
+        </script>
+        
 
 
 
